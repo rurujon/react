@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //불변성 : concat은 원본을 바꿀 수 없다.
+
+        const arr1 = [10,20,30,40,50]
+        arr1.push(60)
+        arr1.push(70)
+        arr1.push(80)
+        console.log(arr1)
+
+        //크롬에는 V8 이라는 엔진이 있어서 ES5나 ES6도 받아줄 수 있다.
+
+        const arr2 = [10,20,30,40,50]
+        console.log(arr2)
+
+        const arr3 = arr2.concat()          //데이터를 추가하는 함수
+        console.log(arr3)
+
+        const arr4 = arr2.concat(60,70,80)  //arr2에 있는 데이터와 동시에 괄호 안에 있는 데이터까지 추가.
+        console.log(arr4)
+
+        console.log('--------------------')
+
+        //배열 객체
+        const data = [
+            {id:1,name:'배수지',age:'29'},
+            {id:2,name:'정인선',age:'32'},
+            {id:3,name:'정인나',age:'30'},
+            {id:4,name:'전소민',age:'35'},
+            {id:5,name:'박민영',age:'37'},
+        ]
+
+        const data1 = data.concat()
+        console.log(data1)
+
+        const data2 = data.concat({
+            id:6,name:'고윤정',age:31
+        })
+        console.log(data2)
+
+        console.log(data)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

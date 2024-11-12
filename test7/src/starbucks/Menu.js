@@ -1,0 +1,15 @@
+import React from 'react';
+import MenuItem from './MenuItem';
+
+const Menu = ({menu,onMenu}) => {
+    return (
+        <div className='menu'>
+            {
+                menu.map(item=><MenuItem key={item.name} item={item} onMenu={onMenu}></MenuItem>)
+            }
+            
+        </div>
+    );
+};
+
+export default Menu;

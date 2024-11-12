@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정보</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            //로그인시 세션에 올려놓은 내가 발급한 토큰
+            var loginToken = sessionStorage.getItem('loginToken')
+
+            if(loginToken==null){
+                alert('로그인해주세요')
+                location.href='/login'
+                return
+            }
+
+            $('#userBtn').click(function(){
+
+                var email = $('#email').val()
+
+                if(!email) return
+
+                $.ajax({
+                    url:'/listInfo',
+                    type:'POST',
+                    data:{
+                        email:email
+                    },
+                    success:function(data){
+                        //alert('data 받음')
+                        //alert(data.user_name)
+                        //alert(data.res_list[0].bank_name)
+
+                        var str = ''
+
+                        for(var i=0;i<data.res_list.length;i++){
+
+                            str += 'user_seq_no: ' + data.user_seq_no + '<br/>'
+                            str += 'fintech_use_num: ' + data.res_list[i].fintech_use_num + '<br/>'
+                            str += 'account_alias: ' + data.res_list[i].account_alias + '<br/>'
+                            str += 'bank_name: ' + data.res_list[i].bank_name + '<br/>'
+                            str += 'account_holder_name: ' + data.res_list[i].account_holder_name + '<br/>'
+                            str += 'account_num_masked: ' + data.res_list[i].account_num_masked + '<br/>'
+                            str += '<br/>****************************************<br/>'
+                        }
+
+                        $('#resultDiv').html(str)
+
+                    }
+
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <h1><%=title%></h1>
+    <div><input type="email" id="email" placeholder="이메일"/></div>
+    <button id="userBtn">사용자 계좌 정보</button>
+    <br/>
+    <br/>
+    <div id="resultDiv"></div>
+</body>
+</html>

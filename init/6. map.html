@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const arr1 = [10,20,30,40,50]
+
+        for(let i=0;i<arr1.length;i++){
+            console.log(i + ":" + arr1[1])
+        }
+
+        console.log('-------------------------')
+        for(let item of arr1){      //of은 값을 뽑아온다.
+            console.log(item)
+        }
+
+        console.log('-------------------------')
+        for(let item in arr1){      //in은 index만 뽑아온다.
+            console.log(item)
+        }
+
+        console.log('-------------------------')
+        arr1.map((item,index)=>{        //map은 반복문이다.
+            return console.log(index,item)
+        })
+
+        console.log('-------------------------')
+        arr1.map((item,index)=>{        
+            console.log(index,item)     //return을 제거해도 된다.
+                                        
+        })
+
+        console.log('-------------------------')
+        arr1.map((item,index)=>console.log(index,item)) //출력할 결과가 하나일 땐 이렇게 중괄호 없이 붙여써도 된다.
+
+        console.log('-------------------------')
+        //배열 객체
+        const data = [
+            {id:1,name:'배수지',age:'29'},
+            {id:2,name:'정인선',age:'32'},
+            {id:3,name:'정인나',age:'30'},
+            {id:4,name:'전소민',age:'35'},
+            {id:5,name:'박민영',age:'37'},
+        ]
+
+        data.map((item,index)=>{
+            return (console.log(item.id,item.name,item.age))
+        })
+
+        console.log('-------------------------')
+        data.map((item,index)=>{
+            console.log(item.id,item.name,item.age)
+        })
+
+        console.log('-------------------------')
+        data.map((item,index)=>console.log(item.id,item.name,item.age))
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

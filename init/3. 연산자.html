@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const done1 = true
+        const done2 = false
+        const done3 = undefined
+
+        const result1 = done1===true ? '참' : '거짓'    //에크만6에서는 === 가 같다는 의미
+        console.log(result1)
+
+        const result2 = done1 && '나는 참이다'          //done1이 true일 때만 '나는 참이다' 가 저장.
+        console.log(result2)
+
+        const result3 = done2 && '나는 참이다'
+        console.log(result3)
+
+        const result4 = done2 || '나는 거짓이다'        //done2가 false일 때만 '나는 거짓이다' 가 저장.
+        console.log(result4)
+
+        const result5 = undefined || '나는 거짓이다'        //undefined는 false로 인식된다.
+        console.log(result4)
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

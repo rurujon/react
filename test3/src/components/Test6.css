@@ -1,0 +1,5 @@
+.wrap {width: 400px; margin: 10px;}
+.wrap .lineRed{border-width: 1px; border-color: red; border-style: solid;}
+.wrap .on{background: yellow;}
+.wrap div{padding: 20px; background-origin: 1px solid #000; margin-bottom: 10px;}
+.wrap button{padding: 10px 25px; margin-right: 5px;}
